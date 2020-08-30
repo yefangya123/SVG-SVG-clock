@@ -1,0 +1,70 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	background-color: black;
+	height: 100%;
+}
+
+svg{
+	width: 100%;
+	height: 100%;
+}
+
+.words{
+	font-size: 22vh;
+	/* 设置文字大小，使得可以去掉内部填充色 */
+	font-weight: bold;
+	fill:none;
+	/* 设置无填充色，使文字中心透明 */
+	stroke-width: 8px;
+	stroke-dasharray: 90,310;
+	/* 设置字体边框为虚线 */
+	animation: drawing 8s linear infinite;
+	/* 创建了一个@keyframes命名为drawing
+动画播放时长为8s、循环播放(infinite)、以linear方式进行播放。　
+linear：线性效果，速度将从开始到结束稳定 */
+	
+}
+
+.words-1{
+	stroke:deepskyblue;
+	text-shadow: 0 0 50px deepskyblue;
+	animation-delay: -2s;
+}
+
+.words-2{
+	stroke:lightgreen;
+	text-shadow: 0 0 50px lightgreen;
+	animation-delay: -4s;
+}
+
+.words-3{
+	stroke:orange;	
+	text-shadow: 0 0 50px orange;
+		/* 设置隐形实现光晕效果 */
+	animation-delay: -6s;
+	/* 在动画开始6s后的位置开始 */
+}
+
+.words-4{
+	stroke:purple;
+	text-shadow: 0 0 50px purple;
+	/* 设置隐形实现光晕效果 */
+	animation-delay: -8s;
+	/* 在动画开始8s后的位置开始 */
+}
+
+@keyframes drawing{
+	from{}
+	to{
+		stroke-dashoffset: -400;
+		/* 一组虚线和边框加起来400，表示每组整体运动400 */
+	}
+}
